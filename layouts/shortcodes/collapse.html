@@ -1,0 +1,23 @@
+{{ if .IsNamedParams }}
+<p>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#{{ .Get "id" }}" aria-expanded="{{ .Get "open" }}" aria-controls="{{ .Get "id" }}">
+        {{ .Get "button" }}
+    </button>    
+</p>
+<div class="collapse" id="{{ .Get "id" }}">
+    <div class="card card-body">
+        {{ .Inner }}
+    </div>
+</div>
+{{ else }}
+<p>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#{{ .Get 0 }}" aria-expanded="{{ .Get 1 }}" aria-controls="{{ .Get 0 }}">
+        {{ .Get 2 }}
+    </button>    
+</p>
+<div class="collapse" id="{{ .Get 0 }}">
+    <div class="card card-body">
+        {{ .Inner }}
+    </div>
+</div>
+{{ end }}

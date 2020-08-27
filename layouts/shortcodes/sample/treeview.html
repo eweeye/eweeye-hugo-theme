@@ -1,0 +1,42 @@
+{{ if .IsNamedParams }}
+    {{ if (isset .Params "class") }}
+    <ul class="{{ .Get "class" }}">
+    {{ else }}
+    <ul>
+    {{ end }}
+{{ else }}
+    {{ if (isset .Params 0) }}
+    <ul class="{{ .Get 0 }}">
+    {{ else }}
+    <ul>
+    {{ end }}
+{{ end }}
+    <li>1
+        <ul>
+            <li>A
+                <ul>
+                    <li>i</li>
+                </ul>
+            </li>
+            <li>B
+                <ul>
+                    <li>ii</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>2
+        <ul>
+            <li>C
+                <ul>
+                    <li>iii</li>
+                </ul>
+            </li>
+            <li>D
+                <ul>
+                    <li>iv</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>

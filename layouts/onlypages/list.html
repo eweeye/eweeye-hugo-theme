@@ -15,26 +15,18 @@
     {{ partial "breadcrumb.html" . }}
     <h1>{{ .Title }}</h1>
     <div class="card-columns">
-      {{ range .Sections }}
+      {{ $currentSection := . }}
+      {{ range .Pages }}
+      {{ if .InSection $currentSection }}  
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">
             <a href="{{ .RelPermalink }}">{{ .Title }}</a>
           </h5>
-          {{ range .Pages }}
-          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-          {{ end }}
+          {{ .Summary }}
         </div>
       </div>
-      {{ end }} {{ range .Pages }}
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-          </h5>
-          <p>{{ .Summary }}</p>
-        </div>
-      </div>
+      {{ end }}
       {{ end }}
     </div>
     {{ partial "footer.html" . }}
