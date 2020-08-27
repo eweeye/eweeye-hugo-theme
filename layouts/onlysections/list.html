@@ -21,18 +21,12 @@
           <h5 class="card-title">
             <a href="{{ .RelPermalink }}">{{ .Title }}</a>
           </h5>
+          {{ $currentSection := . }}
           {{ range .Pages }}
+          {{ if .InSection $currentSection }}
           <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
           {{ end }}
-        </div>
-      </div>
-      {{ end }} {{ range .Pages }}
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-          </h5>
-          <p>{{ .Summary }}</p>
+          {{ end }}
         </div>
       </div>
       {{ end }}

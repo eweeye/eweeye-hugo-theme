@@ -1,0 +1,5 @@
+{{ if .IsNamedParams }}
+<pre><code class="{{.Get "lang" }}">{{ trim .Inner "\n" }}</code></pre>
+{{ else }}
+<pre><code class="{{.Get 0 }}">{{ trim .Inner "\n" }}</code></pre>
+{{ end }}
