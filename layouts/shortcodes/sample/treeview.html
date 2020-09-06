@@ -1,42 +1,84 @@
-{{ if .IsNamedParams }}
-    {{ if (isset .Params "class") }}
-    <ul class="{{ .Get "class" }}">
-    {{ else }}
-    <ul>
-    {{ end }}
-{{ else }}
-    {{ if (isset .Params 0) }}
-    <ul class="{{ .Get 0 }}">
-    {{ else }}
-    <ul>
-    {{ end }}
-{{ end }}
-    <li>1
+<ul{{ if .IsNamedParams }}{{ if (isset .Params "class") }} class="{{ .Get "class" }}"{{ end }}{{ else }}{{ if (isset .Params 0) }} class="{{ .Get 0 }}"{{ end }}{{ end }}>
+    <li>Fruits
         <ul>
-            <li>A
+            <li>Citrus
                 <ul>
-                    <li>i</li>
+                    <li>Oranges</li>
+                    <li>Grapefruits</li>
+                    <li>Mandarins</li>
+                    <li>Limes</li>
                 </ul>
             </li>
-            <li>B
+            <li>Stone fruit
                 <ul>
-                    <li>ii</li>
+                    <li>Nectarines</li>
+                    <li>Apricots</li>
+                    <li>Peaches</li>
+                    <li>Plums</li>
+                </ul>
+            </li>
+            <li>Tropical and exotic
+                <ul>
+                    <li>Bananas</li>
+                    <li>Mangoes</li>
+                </ul>
+            </li>
+            <li>Berries
+                <ul>
+                    <li>Strawberries</li>
+                    <li>Raspberries</li>
+                    <li>Blueberries</li>
+                    <li>Kiwifruit</li>
+                    <li>Passionfruit</li>
+                </ul>
+            </li>
+            <li>Melons
+                <ul>
+                    <li>Watermelons</li>
+                    <li>Rockmelons</li>
+                    <li>Honeydew melons</li>
                 </ul>
             </li>
         </ul>
     </li>
-    <li>2
+    <li>Vegetables
         <ul>
-            <li>C
-                <ul>
-                    <li>iii</li>
-                </ul>
-            </li>
-            <li>D
-                <ul>
-                    <li>iv</li>
-                </ul>
-            </li>
+            <li>Leafy green</li>
+            <ul>
+                <li>Lettuce</li>
+                <li>Spinach</li>
+                <li>Silverbeet</li>
+            </ul>
+            <li>Cruciferous</li>
+            <ul>
+                <li>Cabbage</li>
+                <li>Cauliflower</li>
+                <li>Brussels sprouts</li>
+                <li>Broccoli</li>
+            </ul>
+            <li>Marrow</li>
+            <ul>
+                <li>Pumpkin</li>
+                <li>Cucumber</li>
+                <li>Zucchini</li>
+            </ul>
+            <li>Root</li>
+            <ul>
+                <li>Potato</li>
+                <li>Sweet potato</li>
+                <li>Yam</li>
+            </ul>
+            <li>Edible plant stem</li>
+            <ul>
+                <li>Celery</li>
+                <li>Asparagus</li>
+            </ul>
+            <li>Allium</li>
+            <ul>
+                <li>Onion</li>
+                <li>Garlic</li>
+                <li>Shallot</li>
+            </ul>
         </ul>
     </li>
 </ul>
