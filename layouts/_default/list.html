@@ -13,7 +13,11 @@
   <div class="container">
     {{ partial "nav.html" . }}
     {{ partial "breadcrumb.html" . }}
-    <h1>{{ .Title }}</h1>
+    <div class="row">
+      <div class="col-12">
+        <h1>{{ .Title }}</h1>
+      </div>
+    </div>
     <div class="card-columns">
       {{ range .Sections }}
       <div class="card">
